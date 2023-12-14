@@ -2,7 +2,7 @@ app-id: fr.inria.corese.CoreseGui
 runtime: org.freedesktop.Platform
 runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
-sdk-extensions: 
+sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk11
 command: run.sh
 
@@ -16,7 +16,7 @@ modules:
   - name: openjdk
     buildsystem: simple
     build-commands:
-    - /usr/lib/sdk/openjdk11/install.sh
+      - /usr/lib/sdk/openjdk11/install.sh
 
   - name: corese-gui
     buildsystem: simple
@@ -32,13 +32,14 @@ modules:
 
     sources:
       - type: file
-        url: https://github.com/Wimmics/corese/releases/download/release-4.4.1/corese-gui-4.4.1.jar
-        sha256: cb3270d2ceccc9e8194c7d657eeca3c037e957de994f7eca3bbd1cf58fdbea89
+        url: https://github.com/Wimmics/corese/releases/download/release-4.5.0/corese-gui-4.5.0.jar
+        sha256: 82630936ad0110e08765e4ae4edbeed349fefe5dcfc1f208189cbbdaf3d6b428
         x-checker-data:
           type: json
           url: https://api.github.com/repos/wimmics/corese/releases/latest
           version-query: .tag_name | gsub("release-";"")
-          url-query: '"https://github.com/Wimmics/corese/releases/download/release-" + $version + "/corese-gui-" + $version + ".jar"'
+          url-query: '"https://github.com/Wimmics/corese/releases/download/release-"
+            + $version + "/corese-gui-" + $version + ".jar"'
         dest-filename: corese-gui.jar
       - type: git
         dest: git_repo
