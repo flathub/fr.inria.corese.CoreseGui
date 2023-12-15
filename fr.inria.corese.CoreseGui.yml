@@ -44,6 +44,5 @@ modules:
       - type: git
         dest: git_repo
         url: https://github.com/Wimmics/corese
-        tag: metadata-4.4.1
       - type: file
         path: run.sh
