@@ -1,6 +1,6 @@
 app-id: fr.inria.corese.CoreseGui
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk
@@ -32,20 +32,22 @@ modules:
     sources:
       # jar file from GitHub release
       - type: file
-        url: https://github.com/corese-stack/corese-gui-swing/releases/download/v4.6.0/corese-gui-standalone.jar
-        sha256: c056ff9a8ff6c64445ffd1f44c0e83504d060c50fc2732381ad287f4892cd574
+        url: https://github.com/corese-stack/corese-gui-swing/releases/download/v4.6.1/corese-gui-standalone.jar
+        sha256: 24057fd0eebf231a6c0c68dc59db73068d9685baa6afa9ddba1a7f0ab7c72e0a
         x-checker-data:
           type: json
           url: https://api.github.com/repos/corese-stack/corese-gui-swing/releases/latest
           version-query: .tag_name
-          url-query: '"https://github.com/corese-stack/corese-gui-swing/releases/download/" + $version + "/corese-gui-standalone.jar"'
+          url-query: '"https://github.com/corese-stack/corese-gui-swing/releases/download/"
+            + $version + "/corese-gui-standalone.jar"'
 
       # appdata, desktop and icon files from GitHub repository
       - type: archive
-        url: https://github.com/corese-stack/corese-gui-swing/archive/refs/tags/v4.6.0.tar.gz
-        sha256: 4256cad889ab0f65aabfff87d34bd7b2512e38b568b55a28e50bb56a9b5128ba
+        url: https://github.com/corese-stack/corese-gui-swing/archive/refs/tags/v4.6.1.tar.gz
+        sha256: 017412c2b7ae7199cfbc9913f94e9f7e6426036b3747aebd7c6e341e0ae1c597
         x-checker-data:
           type: json
           url: https://api.github.com/repos/corese-stack/corese-gui-swing/releases/latest
           version-query: .tag_name
-          url-query: '"https://github.com/corese-stack/corese-gui-swing/archive/refs/tags/" + $version + ".tar.gz"'
+          url-query: '"https://github.com/corese-stack/corese-gui-swing/archive/refs/tags/"
+            + $version + ".tar.gz"'
