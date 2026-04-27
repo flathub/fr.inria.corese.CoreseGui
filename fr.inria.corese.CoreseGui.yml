@@ -1,6 +1,6 @@
 app-id: fr.inria.corese.CoreseGui
 runtime: org.freedesktop.Platform
-runtime-version: "25.08"
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk25
@@ -42,8 +42,8 @@ modules:
     sources:
       # Linux x86_64 standalone JAR from GitHub release assets.
       - type: file
-        url: https://github.com/corese-stack/corese-gui/releases/download/v5.0.0/corese-gui-5.0.0-standalone-linux-x64.jar
-        sha256: fc2e2e4b18d6d4b11c6d8a6c614d5aa6a9c748fec22fd76ef2aceaab6cac68a9
+        url: https://github.com/corese-stack/corese-gui/releases/download/v5.0.1/corese-gui-5.0.1-standalone-linux-x64.jar
+        sha256: 3c93a716aad26522b2e9f2ea09f0c00814ecb05d967bef8797e54004225e02a1
         dest-filename: corese-gui-standalone.jar
         only-arches:
           - x86_64
@@ -51,12 +51,13 @@ modules:
           type: json
           url: https://api.github.com/repos/corese-stack/corese-gui/releases/latest
           version-query: .tag_name
-          url-query: '.assets[] | select(.name | endswith("-standalone-linux-x64.jar")) | .browser_download_url'
+          url-query: .assets[] | select(.name | endswith("-standalone-linux-x64.jar"))
+            | .browser_download_url
 
       # Linux arm64 standalone JAR from GitHub release assets.
       - type: file
-        url: https://github.com/corese-stack/corese-gui/releases/download/v5.0.0/corese-gui-5.0.0-standalone-linux-arm64.jar
-        sha256: 743696d9bb387be1d2a2eed0af2340e1f933648621f557e4e7cb840cdb3dd549
+        url: https://github.com/corese-stack/corese-gui/releases/download/v5.0.1/corese-gui-5.0.1-standalone-linux-arm64.jar
+        sha256: b5af3544ba96cfb0a0e21906909491d65deeb98e5fb793c0399408e8a76028ff
         dest-filename: corese-gui-standalone.jar
         only-arches:
           - aarch64
@@ -64,14 +65,16 @@ modules:
           type: json
           url: https://api.github.com/repos/corese-stack/corese-gui/releases/latest
           version-query: .tag_name
-          url-query: '.assets[] | select(.name | endswith("-standalone-linux-arm64.jar")) | .browser_download_url'
+          url-query: .assets[] | select(.name | endswith("-standalone-linux-arm64.jar"))
+            | .browser_download_url
 
       # appdata, desktop and icon files from GitHub repository.
       - type: archive
-        url: https://github.com/corese-stack/corese-gui/archive/refs/tags/v5.0.0.tar.gz
-        sha256: 86a504a7d9e41a37077c3a2564ce504b3f66314284af230cb521f96cb8513a31
+        url: https://github.com/corese-stack/corese-gui/archive/refs/tags/v5.0.1.tar.gz
+        sha256: dcbd3cd68ebd76617a6ef68a48a840dfed9e592906401afd9899a6e3eeddf5d5
         x-checker-data:
           type: json
           url: https://api.github.com/repos/corese-stack/corese-gui/releases/latest
           version-query: .tag_name
-          url-query: '"https://github.com/corese-stack/corese-gui/archive/refs/tags/" + $version + ".tar.gz"'
+          url-query: '"https://github.com/corese-stack/corese-gui/archive/refs/tags/"
+            + $version + ".tar.gz"'
